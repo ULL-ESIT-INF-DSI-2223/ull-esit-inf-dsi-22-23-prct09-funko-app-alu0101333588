@@ -1,0 +1,27 @@
+{
+    "exclude": [
+      "./test",
+      "./node_modules",
+      "./dist",
+      ".nyc_output"
+    ],
+    "compilerOptions": {
+      /* Language and Environment */
+      "target": "es2022",                               
+  
+      /* Modules */
+      "module": "commonjs",                                
+      "rootDir": "./src",                                 
+  
+      /* Emit */
+      "declaration": true,                             
+                                  
+      "outDir": "./dist",                                  
+      
+      /* Type Checking */
+      "noImplicitAny": true,                           
+      "strictNullChecks": true,                       
+      "noImplicitReturns": true,                      
+    }
+  }
+  

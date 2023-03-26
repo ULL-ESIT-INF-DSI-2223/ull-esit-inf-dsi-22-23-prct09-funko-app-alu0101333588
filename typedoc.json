@@ -1,0 +1,6 @@
+{
+    "entryPoints": [
+      //"./src/ejercicios-clase/index.ts"
+    ],
+    "out": "./docs"
+  }
