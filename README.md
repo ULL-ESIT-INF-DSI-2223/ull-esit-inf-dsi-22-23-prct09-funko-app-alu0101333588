@@ -9,3 +9,15 @@
 ###### Desarrollo de Sistemas Informáticos | Práctica 09 | Andrés Hernández Ortega
 
 # Práctica 9 - ...
+
+
+
+# Referencias
+
+- https://frikily.com/cuanto-vale-mi-funko-pop/
+- https://www.npmjs.com/package/yargs
+- https://www.npmjs.com/package/chalk 
+- https://www.npmjs.com/package/jsonfile 
+- https://www.npmjs.com/package/@types/node 
+- https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/node/fs/promises.d.ts 
+- https://nodejs.org/docs/latest-v19.x/api/fs.html#synchronous-api

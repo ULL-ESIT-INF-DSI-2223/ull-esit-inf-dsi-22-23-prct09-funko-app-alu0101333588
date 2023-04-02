@@ -1,4 +1,4 @@
-import { Map } from "./map";
+import { Map } from "./map.js";
 /**
  * Subclase ProdMapReduce Reduce
  * encargada de la operación producto

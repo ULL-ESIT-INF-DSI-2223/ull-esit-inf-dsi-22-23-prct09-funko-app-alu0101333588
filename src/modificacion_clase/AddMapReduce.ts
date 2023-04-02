@@ -1,18 +1,19 @@
-import { Map } from "./map";
+import { Map } from "./map.js";
 /**
  * Subclase DivMap Reduce
  * encargada de la operación división
  */
+/*
 export class AddMapReduce extends Map {
     /*constructor(protected mutationRate: number, protected crossoverRate: number,
         protected maxNumberGenerations: number) {
       super(mutationRate, crossoverRate, maxNumberGenerations);
-    }*/
+    }
     
     /**
      * Constructor de la subclase DivMapReduce
      * @param lista 
-     */
+     
     constructor (lista : number[]) {
         super(lista);
     }
@@ -21,7 +22,7 @@ export class AddMapReduce extends Map {
      * Método reduce
      * @param acumulador_inicial 
      * @returns 
-     */
+     
     reduce(acumulador_inicial: number): number {
         this.afterInitialisation();
 
@@ -33,13 +34,13 @@ export class AddMapReduce extends Map {
         /*while (this._lista[i]) {
             lista_aplicada = funcion(lista_aplicada, this._lista[i]);
             i++;
-        }*/
+        }
         return lista_aplicada;
     }
   
     /**
      * Particular implementation of the population initialisation
-     */
+     
     /*protected initPopulation() {
       console.log(`GA: initialising population`);
       const firstInd = {
@@ -52,11 +53,11 @@ export class AddMapReduce extends Map {
       };
   
       this.population.push(firstInd, secondInd);
-    }*/
+    }
   
     /**
      * Particular implementation of the crossover operator
-     */
+     
     /*protected crossover(firstIndividual: Individual,
         secondIndividual: Individual, crossoverRate: number):
         [Individual, Individual] {
@@ -78,5 +79,5 @@ export class AddMapReduce extends Map {
 
     protected afterSurvivorSelection() {
       console.log(`GA: I have just selected survivors for the next generation`);
-    }*/
-}
+    }
+}*/

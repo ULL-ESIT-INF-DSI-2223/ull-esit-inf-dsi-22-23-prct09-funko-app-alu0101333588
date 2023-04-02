@@ -1,12 +1,12 @@
-import { Map } from "./map";
+import { Map } from "./map.js";
 /**
- * Subclase SubMapReduce Reduce
- * encargada de la operación resta
+ * Subclase DivMap Reduce
+ * encargada de la operación división
  */
-export class SubMapReduce extends Map {
+export class DivMapReduce extends Map {
 
     /**
-     * Constructor de la subclase SubMapReduce
+     * Constructor de la subclase DivMapReduce
      * @param lista 
      */
     constructor (lista : number[]) {
@@ -24,7 +24,7 @@ export class SubMapReduce extends Map {
         let lista_aplicada: number = 0;
         let i: number = 0;
         this._lista.forEach(element => { 
-            lista_aplicada += element - acumulador_inicial;
+            lista_aplicada += element / acumulador_inicial;
         });
         return lista_aplicada;
     }
