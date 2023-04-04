@@ -1,6 +1,8 @@
 {
     "entryPoints": [
-      "./src/index.ts"
+      "./src/index.ts",
+      "./src/Funko.ts",
+      "./src/ColeccionFunkos.ts"
     ],
     "out": "./docs"
   }

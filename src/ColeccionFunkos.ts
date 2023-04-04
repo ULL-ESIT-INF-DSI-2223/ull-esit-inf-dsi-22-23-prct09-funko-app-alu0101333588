@@ -1,9 +1,8 @@
-import { Funko, tipoPop, genero } from "./Funko.js";
-import chalk = require("chalk");
+import { Funko } from "./Funko.js";
+import chalk = require("chalk");
 
 import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync, rmSync } from 'node:fs';
-// existsSync : boolean : saber si existe o no dicho directorio
-// mkdirSync : Crear
+
 
 export class ColeccionFunkos {
   private _funkos : Funko[] = [];
@@ -52,14 +51,14 @@ export class ColeccionFunkos {
    * Función para añadir un nuevo funko a la Colección
    * @param funko : Funko - es el funko a introducir en la colección
    */
-  anadir (funko : Funko) : void {
+  anadir (funko : Funko) : string {
     
     if (this.existeFunko(funko._ID)) {
-      console.log(chalk.red.bold(`NO se ha podido añadir el funko, dado que el ID "${funko._ID}" ya existe`));
+      return chalk.red.bold(`NO se ha podido añadir el funko, dado que el ID ${funko._ID} ya existe`);
     } else {
       writeFileSync('./libreriaFunkos/' + this._nombreUsuario + '/' + funko._ID + '.json', JSON.stringify(funko, null, 2), 'utf8');
       this._funkos.push(funko);
-      console.log(chalk.green.bold(`Se ha añadido correctamente el funko ${funko._nombre}`));
+      return chalk.green.bold(`Se ha añadido correctamente el funko ${funko._nombre}`);
     }
   }
 
@@ -67,14 +66,14 @@ export class ColeccionFunkos {
    * Función para modificar un funko existente
    * @param funko : Funko - es el funko a sustituir en la colección
    */
-  modificar (funko : Funko) : void {
+  modificar (funko : Funko) : string {
     if (this.existeFunko(funko._ID)) {
       let posicion_funko : number = this.ubicacionFunko(funko._ID);
       this._funkos[posicion_funko] = funko;
       writeFileSync('./libreriaFunkos/' + this._nombreUsuario + '/' + funko._ID + '.json', JSON.stringify(funko, null, 2),'utf8');
-      console.log(chalk.green.bold(`Se ha modificado correctamente el funko ${funko._nombre}`));
+      return chalk.green.bold(`Se ha modificado correctamente el funko ${funko._nombre}`);
     } else {
-      console.log(chalk.red.bold.bold(`NO se ha podido modificar el funko en cuestión dado que no existe ["${funko._ID}"]`));
+      return chalk.red.bold(`NO se ha podido modificar el funko en cuestión dado que no existe ["${funko._ID}"]`);
     }
   }
 
@@ -83,14 +82,14 @@ export class ColeccionFunkos {
    * Función para eliminar un funko existente
    * @param ID : number - es la ID del funko a eliminar en la colección
    */
-  eliminar (ID : number) : void {
+  eliminar (ID : number) : string {
     if (this.existeFunko(ID)) {
       let posicion_funko : number = this.ubicacionFunko(ID);
       this._funkos.splice(posicion_funko);
       rmSync('./libreriaFunkos/' + this._nombreUsuario + '/' + ID + '.json');
-      console.log(chalk.green.bold(`Se ha eliminado correctamente el funko con ID ${ID}`));
+      return chalk.green.bold(`Se ha eliminado correctamente el funko con ID ${ID}`);
     } else {
-      console.log(chalk.red.bold.bold(`NO se ha podido eliminar el funko en cuestión dado que no existe ["${ID}"]`));
+      return chalk.red.bold(`NO se ha podido eliminar el funko en cuestión dado que no existe ["${ID}"]`);
     }
   }
 
@@ -118,7 +117,7 @@ export class ColeccionFunkos {
    * Función para mostrar la información de un funko existente
    * @param ID : number - es la ID del funko a mostrar
    */
-  mostrar (ID : number) : void {
+  mostrar (ID : number) : string {
     if (this.existeFunko(ID)) {
       let posicion_funko : number = this.ubicacionFunko(ID);
       console.log(`**** ID: ${this._funkos[posicion_funko]._ID}`);
@@ -132,8 +131,9 @@ export class ColeccionFunkos {
       console.log(`Características especiales: ${this._funkos[posicion_funko]._caracteristicasEspeciales}`);
       this.rangoValoresMercado(this._funkos[posicion_funko]._valorMercado);
       console.log(`****`);
+      return chalk.green.bold(`Se ha podido mostrar el funko en cuestión`);
     } else {
-      console.log(chalk.red.bold(`NO se ha podido mostrar el funko en cuestión dado que no existe ["${ID}"]`));
+      return chalk.red.bold(`NO se ha podido mostrar el funko en cuestión dado que no existe ["${ID}"]`);
     }
   }
 

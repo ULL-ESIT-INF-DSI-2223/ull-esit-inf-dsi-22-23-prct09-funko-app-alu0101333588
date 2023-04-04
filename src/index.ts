@@ -1,40 +1,12 @@
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 
-import { Funko, tipoPop, genero } from './Funko.js';
+import { Funko } from './Funko.js';
 import { ColeccionFunkos } from './ColeccionFunkos.js';
 import { existsSync, mkdirSync } from 'node:fs';
-import chalk = require("chalk");
-
-/*
-import { writeFileSync } from 'node:fs';
-
-let nombreUsuario : string = "no_vale";
-//mkdirSync('./libreriaFunkos/' + nombreUsuario);
-let ID : number = 12;
-let tipo1 : string = "Pop!";
-let genero1 : string = "Animación";
-
-let tipoAux : tipoPop = tipo1 as tipoPop;
-let generoAux : genero = genero1 as genero;
-let funko1 : Funko = {
-  _ID: 12,
-  _nombre: "funkazo",
-  _descripcion: "descripcion",
-  _tipo: tipoAux,
-  _genero: generoAux,
-  _franquicia: "argv.franquicia", 
-  _numero: 367, 
-  _exclusivo: false, 
-  _caracteristicasEspeciales: "argv.caracteristicasEspeciales", 
-  _valorMercado: 1500
-};
-writeFileSync('./libreriaFunkos/' + nombreUsuario + '/' + ID + '.json', JSON.stringify(funko1, null, 2), 'utf8');
-
-if (existsSync('./libreriaFunkos/' + nombreUsuario)) { 
-  console.log(`fiesta`);
-}*/
-
+import chalk = require("chalk");
+import { genero } from "./genero.js";
+import { tipoPop } from "./tipoPop.js";
 
 yargs(hideBin(process.argv))
 
@@ -127,7 +99,8 @@ yargs(hideBin(process.argv))
       _caracteristicasEspeciales: argv.caracteristicasEspeciales, 
       _valorMercado: argv.valorMercado
     };
-    coleccionFunko1.anadir(funko1);
+    let mensaje: string = coleccionFunko1.anadir(funko1);
+    console.log(`${mensaje}`);
   })
 
   .command('modificar', 'Modificar funko', {
@@ -203,7 +176,9 @@ yargs(hideBin(process.argv))
       _caracteristicasEspeciales: argv.caracteristicasEspeciales, 
       _valorMercado: argv.valorMercado
     };
-    coleccionFunko1.modificar(funko1);
+    
+    let mensaje: string = coleccionFunko1.modificar(funko1);
+    console.log(`${mensaje}`);
   })
 
   .command('eliminar', 'Eliminar funko', {
@@ -249,7 +224,10 @@ yargs(hideBin(process.argv))
   }, (argv) => {
 
     let coleccionFunko1 : ColeccionFunkos = new ColeccionFunkos(argv.nombreUsuario);
-    coleccionFunko1.mostrar(argv.id);
+    
+    let mensaje: string = coleccionFunko1.mostrar(argv.id);
+    console.log(`${mensaje}`);
+    
   })
 
  .help()
