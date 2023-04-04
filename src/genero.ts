@@ -4,5 +4,5 @@ export enum genero {
   Videojuegos = "Videojuegos",
   Deportes = "Vynil Gold",
   Musica = "Música",
-  Anime = "Anime"
+  Anime = "Anime",
 }

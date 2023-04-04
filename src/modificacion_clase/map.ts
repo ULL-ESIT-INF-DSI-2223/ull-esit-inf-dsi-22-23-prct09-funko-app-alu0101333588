@@ -1,23 +1,18 @@
-
-
 /**
  * Abstract class of an Evolutionary Algorithm, which must be
  * extended by subclasses that implement a particular approach.
  */
 export abstract class Map {
-
   protected _lista: number[];
 
-  constructor(lista : number[]) {
+  constructor(lista: number[]) {
     this._lista = lista;
   }
-
 
   /**
    * Template method that defines the skeleton of an Evolutionary Algorithm.
    */
   public run() {
-    
     // Hook
     this.afterInitialisation();
     //this.map();
@@ -28,27 +23,26 @@ export abstract class Map {
     //this.afterInitialisation();
     // Initial _lista evaluation
     //this.evaluate_lista();
-    
+
     //this.afterEvaluation();
 
     // Run the generations of the algorithm
     //let currentNumberGenerations = 0;
     //while (currentNumberGenerations < this.maxNumberGenerations) {
-      // Generates the children
-      //const child_lista = this.generateAndEvaluateChild_lista();
-      // Hook
-      //this.afterChildrenGeneration();
-      // Selects the fittest individuals from among parents and children
-      //this._lista = this.selectFromParentsAndChildren(child_lista);
-      // Hook
-      //this.afterSurvivorSelection();
-      // New generation performed
-      //currentNumberGenerations++;
+    // Generates the children
+    //const child_lista = this.generateAndEvaluateChild_lista();
+    // Hook
+    //this.afterChildrenGeneration();
+    // Selects the fittest individuals from among parents and children
+    //this._lista = this.selectFromParentsAndChildren(child_lista);
+    // Hook
+    //this.afterSurvivorSelection();
+    // New generation performed
+    //currentNumberGenerations++;
     //}
   }
 
   map(funcion: (lista_: number) => number): number[] {
-
     this.afterInitialisation();
 
     let lista_aplicada: number[] = [];
@@ -78,5 +72,4 @@ export abstract class Map {
   //protected afterEvaluation() {}
   //protected afterChildrenGeneration() {}
   //protected afterSurvivorSelection() {}
-  
 }

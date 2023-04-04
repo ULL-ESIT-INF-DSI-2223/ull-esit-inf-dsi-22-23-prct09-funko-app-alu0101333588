@@ -3,7 +3,7 @@ import { tipoPop } from "./tipoPop.js";
 
 /**
  * Interfaz Funko que contiene todos los atributos requeridos
- * para describir tal objeto, según sus características 
+ * para describir tal objeto, según sus características
  * @param _ID : number; Identificador único del Funko
  * @param _nombre : string; Nombre del funko
  * @param _descripcion : string; Descripción del funko
@@ -14,17 +14,17 @@ import { tipoPop } from "./tipoPop.js";
  * @param _exclusivo : boolean; Si es exclusivo o no
  * @param _caracteristicasEspeciales : string; Descripción de las caracterísicas especiales
  * @param _valorMercado : number; Cuál es el valor numérico en el mercado
-*/
+ */
 
 export interface Funko {
-  _ID : number;
-  _nombre : string;
-  _descripcion : string;
-  _tipo : tipoPop;
+  _ID: number;
+  _nombre: string;
+  _descripcion: string;
+  _tipo: tipoPop;
   _genero: genero;
-  _franquicia : string;
-  _numero : number;
-  _exclusivo : boolean;
-  _caracteristicasEspeciales : string;
-  _valorMercado : number;
+  _franquicia: string;
+  _numero: number;
+  _exclusivo: boolean;
+  _caracteristicasEspeciales: string;
+  _valorMercado: number;
 }
